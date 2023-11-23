@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>
+        <%= content %>
+    </h1>
+
+    <form  method="POST" action="/sent">
+        <input type="text" id="title" name="title">
+        <button type="submit" class="btn btn-primary">sent</button>
+    </form>
+
+    <form method="POST" action="/add">
+        <input type="string" id="ingr1" name="ingr1">
+        <button type="submit" class="btn btn-primary">add ingredient</button>
+    </form>
+
+
+    
+
+</html>
