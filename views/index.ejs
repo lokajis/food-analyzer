@@ -9,21 +9,27 @@
 
 <body>
 
-    <h1>
+    <h1 id="h1">
+
         <%= content %>
     </h1>
 
-    <form  method="POST" action="/sent">
-        <input type="text" id="title" name="title">
-        <button type="submit" class="btn btn-primary">sent</button>
-    </form>
-
-    <form method="POST" action="/add">
-        <input type="string" id="ingr1" name="ingr1">
-        <button type="submit" class="btn btn-primary">add ingredient</button>
-    </form>
 
 
-    
+    <input type="text" id="inputText" placeholder="Type something...">
+    <button onclick="addItem()">Add to List</button>
+
+    <!-- <form method="POST" action="/sent"> -->
+    <button id="sent">done</button>
+    <!-- </form> -->
+    <ul id="itemList"></ul>
+
+    <script src="/client.js"></script>
+
+    <script>
+
+    </script>
+
+</body>
 
 </html>
