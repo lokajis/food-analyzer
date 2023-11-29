@@ -19,9 +19,6 @@ let data = {
   ingr: ""
 };
 
-
-
-
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -33,61 +30,33 @@ function getPostRequestHeaders() {
   };
 }
 
-
-
-
-
-// get main page
+// Serve home page to the user
 app.get("/", (req, res) => {
-
-
-
-  res.render("index.ejs", { content: "Awaiting for data" });
+  res.render("index.ejs", { Recipe: "Recipe", pageTitle: "Awaiting for data" });
 });
 
+// Get the recipe from the user
+app.post("/submitRecipe", async (req, res) => {
 
-
-
-// send to api for responce
-
-app.post("/sent", async (req, res) => {
   try {
-
-    const listArray = req.body.net;
-    console.log("Received listArray:", listArray);
-
+    const recipe = req.body.data.recipe;
+    console.log("these are the ingridients :", recipe);
     data = {
       title: 'some recipe',
-      ingr: listArray
+      ingr: recipe
     };
-    // console.log(data);
-    const responce = await axios.post(apiUrl, data, { headers: getPostRequestHeaders(), params });
-    // console.log(responce);
-    const wantedContent = responce.data.totalNutrients;
-    // console.log("your looking for thisssss :", wantedContent);
+    const response = await axios.post(apiUrl, data, { headers: getPostRequestHeaders(), params });
+    const wantedContent = response.data.totalNutrients;
+    console.log(wantedContent);
 
-    const nutritionInfo = {
 
-      energy: wantedContent.ENERC_KCAL.quantity,
-      fat: wantedContent.FAT.quantity,
-      carbs: wantedContent.CHOCDF.quantity,
-      saturatedFat: wantedContent.FASAT.quantity,
-      protein: wantedContent.PROCNT.quantity,
-      fiber: wantedContent.FIBTG.quantity
-    }
-    console.log("the nutrition info is :", nutritionInfo);
-
-    res.status(200).json({
-      content: JSON.stringify(nutritionInfo)
-    });
+    console.log(wantedContent);
+    res.json(wantedContent);
   } catch (error) {
-    console.log("the error is :", error);
-    res.status(500).json({ content: "low quality inserted data" });
+    console.log(error);
+    res.redirect("/");
   }
 });
-
-
-
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

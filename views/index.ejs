@@ -3,32 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
 
 <body>
 
-    <h1 id="h1">
+    <script src="/client.js" defer></script>
 
-        <%= content %>
+    <h1>
+        Food Nutrition Calculator
     </h1>
 
+    <h2 class="">
+        Recipe
+    </h2>
 
-
-    <input type="text" id="inputText" placeholder="Type something...">
-    <button onclick="addItem()">Add to List</button>
-
-    <!-- <form method="POST" action="/sent"> -->
-    <button id="sent">done</button>
-    <!-- </form> -->
     <ul id="itemList"></ul>
+    <input type="text" id="inputText" placeholder="1 oz chicken breast">
+    <button class="width: 30%" type="button" onclick="addItem()">Add to List</button>
+    <button id="sent" onclick="submitRecipe()">Get recipe nutrition</button>
+    <div id="nutritionInfo"></div>
 
-    <script src="/client.js"></script>
-
-    <script>
-
-    </script>
 
 </body>
 
