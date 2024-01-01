@@ -1,4 +1,6 @@
-
+/**
+ * Adds a recipe item to the itemList element.
+ */
 function addItem() {
     const inputElement = document.getElementById("inputText");
     const itemListElement = document.getElementById("itemList");
@@ -19,14 +21,15 @@ function addItem() {
  *
  * @param {HTMLDivElement} nutritionDiv – div to render nutrition info in
  * @param {Object} data – nutrition data
- */function renderNutritionInfo(nutritionDiv, data) {
+ */
+function renderNutritionInfo(nutritionDiv, data) {
 
     let title = document.createElement("h2");
     title.textContent = "Nutrition info";
     nutritionDiv.appendChild(title);
 
     let table = document.createElement("table");
-    table.className = 'nutrition-table'; // Add a class for potential CSS styling
+    table.classList.add("striped");
     nutritionDiv.appendChild(table);
 
     // Create the table header
@@ -92,6 +95,8 @@ async function submitRecipe() {
         let nutritionDiv = document.getElementById("nutritionInfo");
         nutritionDiv.innerHTML = "";
         renderNutritionInfo(nutritionDiv, data);
+        let itemList = document.getElementById("itemList");
+        itemList.innerHTML = "";
     } else {
         console.error("Error sending data to the server.");
     }

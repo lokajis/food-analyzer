@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
 import 'dotenv/config'
+import pg from "pg";
 
 const app = express();
 const port = 8080;
@@ -13,6 +14,16 @@ const params = {
   app_id: api_id,
   app_key: api_key
 };
+
+// const db = new pg.Client({
+//   user: "projectFoodanAlyzer",
+//   host: "localhost",
+//   database: "permalist",
+//   password: "!23postgres",
+//   port: 5432,
+// });
+
+// db.connect();
 
 let data = {
   title: 'some recipe',
@@ -30,10 +41,52 @@ function getPostRequestHeaders() {
   };
 }
 
-// Serve home page to the user
+// Serve firstpage page to the user
 app.get("/", (req, res) => {
-  res.render("index.ejs", { Recipe: "Recipe", pageTitle: "Awaiting for data" });
+
+  res.render("firstPage.ejs");
 });
+
+// Serve login page to the user
+app.get("/login", (req, res) => {
+
+  res.render("login.ejs");
+});
+
+// Serve register page to the user
+app.get("/register", (req, res) => {
+
+  res.render("register.ejs");
+});
+
+// Serve home page to the user
+app.get("/home", (req, res) => {
+
+  res.render("home.ejs");
+});
+
+
+
+app.post("/register", (req, res) => {
+
+  const ClientsToRegisterUsername = req.body.username;
+  const ClientsToRegisterPassword = req.body.password;
+
+  res.redirect("/login");
+});
+
+
+
+app.post("/login", (req, res) => {
+
+  const ClientsUsername = req.body.username;
+  const ClientsPassword = req.body.password;
+  console.log(ClientsUsername, ClientsPassword);
+  res.redirect("/home");
+});
+
+
+
 
 // Get the recipe from the user
 app.post("/submitRecipe", async (req, res) => {
