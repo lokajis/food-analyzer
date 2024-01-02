@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Input from "./Input";
+import INput from "./Input";
 import RecipeIngredients from "./RecipeIngredients";
 import axios from "axios";
 import NutritionTable from "./NutritionalTable";
 import ButtonSizes from "./ReactComponents";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Login from "../pages/LoginPage";
 
 function App() {
   const [arrayOfIngredience, updateIngridients] = useState([]);
@@ -43,8 +44,12 @@ function App() {
   console.log(apiRes);
 
   return (
-    <div className="flex justify-center pt-20" ><div >
-      <h1 className="text-3xl text-center" >Food Nutrition Calculator </h1>
+    <div className="flex justify-center pt-20" >
+      <div >
+
+      <Login />
+
+      {/* <h1 className="text-3xl text-center" >Food Nutrition Calculator </h1>
       <h2 className="text-center">recipe</h2>
 <div className="flex justify-center  ">
       <div className="flex-col  ">
@@ -55,13 +60,12 @@ function App() {
 </div></div>
 
 
-<div className="flex justify-center " ><Input  handleClickInApp={addToArray} /></div>
+<div className="flex justify-center " ><INput  handleClickInApp={addToArray} /></div>
       
 
      <div className="flex justify-center pt-5" ><ButtonSizes  onClick={makeRecipeReq} text="Get recipe nutritions" /></div>  
 
-      <NutritionTable apiRes={apiRes} />
-
+      <NutritionTable apiRes={apiRes} /> */}
     </div>
     </div>
   );
