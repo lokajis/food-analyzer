@@ -1,17 +1,21 @@
-import google from "../images/google.png"
+import googleImg from "../images/google.png"
 import github from "../images/github.png"
 import facebook from "../images/facebook.png"
 
-
 function Login (){
+
+    function google () {
+        window.open("http://localhost:8080/auth/google/NutriLog","_self")
+    }
+
 return(
-    <div className="login">
+    <div className="login" onClick={(google)}>
 <h1 className="loginTitle">Choose a Login Method</h1>
 <div className="wrapper">
 
 <div className="left">
     <div className="logginButton google">
-     <img src={google} alt="" className="icon" />   
+    <img src={googleImg} alt="" className="icon" />   
      Google
     </div>
     <div className="logginButton facebook">
