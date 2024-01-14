@@ -1,0 +1,267 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+ */
+
+.navbar{
+   
+    height: 50px;
+    background-color: rgb(47, 39, 39);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.logo{
+font-size: 20px;
+font-weight: bold;
+
+}
+
+.list{
+    display: flex;
+align-items: center;
+list-style: none;
+}
+
+.listItem{
+    margin-right: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.avatar{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+ .icon{
+    height: 2.5rem;
+ }
+
+ .login{
+    height: calc(100vh - 50px);
+display: flex; 
+align-items: center;
+justify-content: center;
+}
+
+.wrapper{
+    width: 60%;
+height: 75%;
+-webkit-box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.32); 
+box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.32);
+display: flex;
+align-items: center;
+border-radius: 20px;
+}
+
+.left,.right{
+  flex: 1;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.or{
+    border: 2px solid lightgray;
+    border-radius: 50%;
+    padding: 10px;
+    color:gray;
+    background-color: white;
+    font-weight: bold;
+
+}
+
+.line{
+    width: 0.5px;
+    height: 70%;
+    background-color: lightgray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+.logginButton{
+    width: 150px;
+    padding: 15px 25px;
+border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.google{
+    background-color: #df4930;;
+}
+
+
+.facebook{
+    background-color: #507cc0;
+}
+
+
+.github{
+    background-color: black;;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+input{
+    width: 200px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.submit{
+    width: 200px;
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.loginTitle{
+    position: absolute;
+    top: 150px;
+color: lightgray;
+}
+
+.link{
+    color: inherit;
+    text-decoration: none;
+}
+
+.homePageTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.homePageH2Title{
+    display: flex;
+    justify-content: center;
+margin-top: 20px;
+
+
+}
+
+.inputHomePage{
+   display: flex;
+   justify-content: center;
+}
+
+.inputButtonHomePage{
+    height: 49px;
+    margin-left: 5px;
+    color: white;
+    background-color: darkslategray;
+border-radius: 5px;
+border-style: none;
+font-style: serif;
+font-weight: bold;
+}
+
+
+.getRecipieButtonDiv{
+  
+    /* position: absolute; */
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+.getRecipieButton{
+    height: 30px;
+    margin-top: 50px;
+    color: white;
+    background-color: darkslategray;
+border-radius: 5px;
+border-style: none;
+font-style: serif;
+font-weight: bold;
+}
+
+.imputPlusButtons{
+
+padding: 20px 20px;
+    width: 600px;
+    display:  flex;
+flex-direction: column;
+background-color:aliceblue;
+justify-content: center;
+align-items: center;
+border-radius: 10px;
+}
+
+.centering{
+    display: flex;
+    justify-content: center;
+}
+
+.ingredients{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+.ingredient{
+ 
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.checkBox{
+/* padding: 0; */
+width: 30px;
+margin-left: 0;
+margin-right: 20px;
+}
+
+.listedItems{
+    padding-left: 0px;
+    margin-left: 0pxb;
+}
+
+.nutriTable{
+    padding-top: 20px;
+display: flex;
+justify-content: center;
+}
