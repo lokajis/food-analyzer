@@ -61,12 +61,12 @@ For the server, you need to add your APIS keys (from https://www.edamam.com/ ) i
 
 ```env
 FOOD_API_KEY=""
-FOOD_API_ID = ""
+FOOD_API_ID =""
 ```
 
 ## Credits
 
-This software uses the following open source packages:
+This software uses the following open-source packages:
 
 - [React.js](https://react.dev/) for the client-side app
 - [Node.js](https://nodejs.org/) for the backend
