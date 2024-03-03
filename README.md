@@ -61,8 +61,11 @@ For the server, you need to add your APIS keys (from https://www.edamam.com/ ) i
 
 ```env
 FOOD_API_KEY=""
+```
+```env
 FOOD_API_ID =""
 ```
+
 
 ## Credits
 
