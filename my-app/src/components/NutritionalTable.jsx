@@ -1,32 +1,44 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 
 
 function NutritionTable(props) {
 
     return (
-        <table className="border-separate border-spacing-2  border-slate-500" >
-            <tbody >
-                <tr>
+        <Fragment>
+            {/* add example barr */}
+            {props.loading ? null :
+            props.apiRes ? null :
+            <div className='exampleFood'> <h3>For example</h3>
+                    <li>1 cup orange juice</li>
+                    <li>2 tablespooms plive oil</li>
+                    <li>2 carrots</li>
+                </div> } 
 
-                    <th > {props.apiRes ? "Nutrient" : null}</th>
-                    <th>{props.apiRes ? "Label" : null} </th>
-                    <th>{props.apiRes ? "Quantity" : null} </th>
-                    <th>{props.apiRes ? "Unit" : null} </th>
-                </tr>
-                {Object.keys(props.apiRes).map((nutrientKey) => {
-                    const nutrient = props.apiRes[nutrientKey];
-                    return (
-                        <tr key={nutrientKey}>
-                            <td>{nutrientKey}</td>
-                            <td>{nutrient.label}</td>
-                            <td>{nutrient.quantity}</td>
-                            <td>{nutrient.unit}</td>
-                        </tr>
-                    );
-                })}
-            </tbody>
-        </table>
+            <table className="table" >
+                <tbody >
+                    <tr >
+
+                        <th > {props.apiRes ? "Nutrient" : null}</th>
+                        <th>{props.apiRes ? "Label" : null} </th>
+                        <th>{props.apiRes ? "Quantity" : null} </th>
+                        <th>{props.apiRes ? "Unit" : null} </th>
+                    </tr>
+                    {Object.keys(props.apiRes).map((nutrientKey) => {
+                        const nutrient = props.apiRes[nutrientKey];
+                        return (
+                            <tr key={nutrientKey}>
+                                <td className="tableSpacing">{nutrientKey}</td>
+                                <td className="tableSpacing">{nutrient.label}</td>
+                                <td className="tableSpacing leftPadding">{Math.round(nutrient.quantity * 100) / 100}</td>
+                                <td className="tableSpacing">{nutrient.unit}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </Fragment>
+
     );
 }
 
