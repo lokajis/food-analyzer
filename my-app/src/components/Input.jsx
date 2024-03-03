@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ButtonSizes from "./ReactComponents";
-import { TextFieldHiddenLabel } from "./ReactComponents";
 
 function INput(props) {
     const [input, updateInput] = useState("");
@@ -18,8 +16,9 @@ function INput(props) {
     }
 
     return (
-        <div class="flex justify-around ">
-            <div className="inputHomePage"><input className= ""  onChange={handleChange} value={input} name="recipieIngredients" type="text" />
+        <div className="MediaForInputAndButton" >
+            <div className="inputHomePage">
+                <input onChange={handleChange} value={input} name="recipieIngredients" type="text" />
              <button className="inputButtonHomePage" onClick={handleClick} >Add to list</button> 
             </div> 
         </div>
