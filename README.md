@@ -20,10 +20,14 @@
 </p>
 
 <p align="center">
-<img src="./assets/pcSiseStart.png" width="49%"><img/>
-<img src="./assets/PcSiseNutritionalInfo.png" width="49%"><img/>
+<img src="./assets/firstPage.png" width="49%"><img/>
+<img src="./assets/listEgg.png" width="49%"><img/>
 </p>
 
+<p align="center">
+<img src="./assets/Nutrients.png" width="49%"><img/>
+<img src="./assets/MobileSise.png" width="49%"><img/>
+</p>
 
 ## Key Features
 
@@ -61,6 +65,12 @@ For the server, you need to add your APIS keys (from https://www.edamam.com/ ) i
 
 ```env
 FOOD_API_KEY=""
+<<<<<<< HEAD
+=======
+```
+```env
+FOOD_API_ID =""
+>>>>>>> e10fb42 (text change)
 ```
 ```env
 FOOD_API_ID =""
