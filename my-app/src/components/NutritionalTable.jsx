@@ -11,7 +11,7 @@ function NutritionTable(props) {
             props.apiRes ? null :
             <div className='exampleFood'> <h3>For example</h3>
                     <li>1 cup orange juice</li>
-                    <li>2 tablespooms plive oil</li>
+                    <li>2 tablespoons olive oil</li>
                     <li>2 carrots</li>
                 </div> } 
 
